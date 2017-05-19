@@ -1,0 +1,218 @@
+.main02{
+	overflow: hidden;
+}
+.main02_box{
+	border:25px solid #7E95CB;
+	height:575px;
+	width:1150px;
+	margin:50px auto;
+	
+}
+.main02_box>div{
+	float:left;
+	
+}
+.main02_nav{
+	width:385px;
+	height:570px;
+	float:left;
+	overflow: hidden;
+
+}
+.main02_nav>ul{
+	width:100%;
+	height:100%;
+}
+
+.main02_nav>ul>li{
+	width:100%;
+	height:200px;
+	border-bottom: 1px solid #A1B2D9;
+	overflow: hidden;
+	position: relative;
+}
+.main02_nav>ul>li>p{
+	position: absolute;
+	top:0;
+	right:0;
+	/*text-align: center;*/
+	display:none;
+	color:white;
+	height: 0;
+	width: 0;
+	border-top: 60px solid rgba(255,0,0,.4);
+	border-left: 70px solid transparent;
+}
+.main02_nav>ul>li>p>span{
+	position: absolute;
+	left:-30px;top:0;
+	font-weight: bolder;
+	font-size: 18px;
+	display: inline-block;
+	width:30px;
+	height:30px;
+	text-shadow: -1px 0 black,0 1px black,1px 0 black,0 -1px black;   
+    color:yellow;   
+}
+
+.main02_nav>ul>li>img{
+	width:100%;
+	height:100%;
+}
+
+.main02_list{
+	
+	width:760px;
+	height:100%;
+	float:right;
+	overflow: hidden;
+	border-left:1px solid #A1B2D9;
+}
+.main02_tab{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	
+}
+
+.main02_tab>ul:first-child{
+	width:100%;
+	height:100px;
+	border-bottom:1px solid #A1B2D9;
+	text-align: center;
+	
+}
+.main02_tab>ul:first-child>li{
+	width:152px;
+	float:left;
+	height:100px;
+	line-height: 100px;
+	font-size: 1.2em;
+	
+}
+.main02_tab>ul:last-child{
+	height:475px;
+	padding:10px;
+}
+.main02_tab>ul:last-child>li{
+	height:100%;
+}
+
+.main02_tab>ul:last-child>li>h2{
+	text-align: center;
+	font-size: 20px;
+	margin-bottom:3px;
+}
+.main02_tab>ul:last-child>li>div{
+	text-align: center;
+}
+.main02_tab>ul:last-child>li>p{
+	text-indent: 30px;
+}
+.main02_tab>ul:last-child>li>p>img{
+	width:350px;
+	height:205px;
+	margin:8px 0 8px 140px;
+}
+
+
+
+
+/*购物商品*/
+#tab_2{
+	margin-left:3px;
+}
+#tab_2>div{
+	
+	width:756px;
+	height:50px;
+	line-height: 50px;
+	background:#0D3954;
+	text-align: center;
+	color:white;
+}
+#tab_2>div>a{
+	display:inline-block;
+	width:250px;
+	color:#9D9D9D;
+	background:#363636;
+	float:right;
+}
+#tab_2>ul{
+	margin-top:2px;
+	width:100%;
+	height:570px;
+	padding:0px;
+}
+#tab_2>ul>li{
+	float:left;
+	width:250px;
+	height:260px;
+	margin-right: 3px;
+	position:relative;
+}
+
+#tab_2>ul>li img{
+	width:250px;
+	height:170px;
+	
+}
+#tab_2>ul>li>p{
+	line-height:20px;
+	text-align: center;
+	text-indent: 0px;
+}
+#tab_2>ul>li>span{
+	width:100%;
+	display: inline-block;
+	text-align: center;
+	color:red;
+}
+#tab_2>ul>li>.shop{
+	background:#C61A16;
+	position:absolute;
+	bottom:0;
+	width:100%;height:24px;
+	line-height: 24px;
+	color:white;
+	text-align: center;	
+}
+
+/*手风琴*/
+#tab_3{
+	width:700px;
+	height:530px;
+	margin:20px auto;
+	box-shadow: 2px 2px 2px 2px black,
+	-2px 2px 2px 2px black,
+	2px -2px 2px 2px black,
+	-2px -2px 2px 2px black;
+	overflow: hidden;
+	position: relative;
+}
+#tab_3 li{
+	width:140px;
+	height:100%;
+	float:left;
+	box-shadow: -2px 0 2px 2px black;
+	position: relative;
+}
+
+#tab_3 li img{
+	height:100%;
+	width:580px;
+	/*position: absolute;*/
+	/*filter: alpha(opacity=100);
+	opacity: 1;
+	visibility: hidden;*/
+}
+#tab_3>li>div{
+	width:200px;
+	position: absolute;
+	bottom:20px;
+	left:10px;
+	color:white;
+	text-shadow: 2px 2px 2px black;
+	transform: rotate(-90deg);
+	transform-origin:left center;
+}

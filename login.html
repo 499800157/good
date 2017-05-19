@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>U派通行证</title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/登录验证.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.animate.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	</head>	
+	<script type="text/javascript">
+	</script>
+	<body>
+		<div class="container">
+			<div class="top">
+				<div><a href="index.html"><img title="育碧中国" src="img/logo.jpg"/></a></div>
+				<ul>
+					<li><a href="">首页</a></li>
+					<li><a href="">用户中心</a></li>
+					<li><a href="">充值中心</a></li>
+					<li><a href="">育碧中国</a></li>
+					<li><a href="">育碧商城</a></li>
+				</ul>
+				<p><img src="img/login_ico2.png"/>登录</p>
+			</div>
+			<div id="shclDefault"></div>
+			<div class="middle" >
+				
+				<form class="login" >
+					<h2><img src="img/login02.png"/></h2>
+					<h1>会员登录</h1>
+					<p>U派对旗下产品适合12岁以上玩家</p>
+					<span>账号</span><input type="text" /><br />
+					<span>密码</span><input type="password" /><br>
+					<div>
+						<input type="checkbox" name="" id="" value="" />自动登录
+						<span>找回密码</span>
+					</div>
+					<input type="submit" name="" id="" value="登&nbsp&nbsp&nbsp陆" /></a><br />
+					<a href="#">还没有U派对账号？<span> 注册</span></a>
+				</form>
+				<div>
+					<h2>欢迎来到<span>育碧中国</span></h2>
+					<ul>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+						<li><img src="img/star.png"/></li>
+					</ul>
+				</div>
+			</div>				
+			<div class="bottom">
+				<div class="bottom-else">
+					<p>健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+					<p>上海碧汉网络科技有限公司 <a href="">联系我们</a> <a href="">加入我们</a></p>
+					<p>文化部网络游戏举报和联系电子邮箱：wlwh@vip.sina.com|纠纷处理方式：请联系客服或依《用户协议》约定方式处理</p>
+				</div>
+				<div class="bottom-copy">
+					Copyright &copy; 2004-2017 冯森jd.com 版权所有
+				</div>
+			</div>
+		</div>	
+	</body>
+	<script>
+var num = 0;
+var n = 0;
+document.onmousedown = function() {
+    this.onmousemove = function(evt) {
+        var e = evt || window.evt;
+        var x = e.pageX - 25;
+        var y = e.pageY - 25;
+        var oDiv = document.createElement('div');
+       $(oDiv).css({'width':50,'height':50,'position':'fixed','backround-size':'100%'})
+        n = parseInt(num / 20);
+        oDiv.style.cssText = "top: " + y + "px;left:" + x + "px;background-image:url(http://www.jq22.com/tp/06b55678-7ff6-4060-a0cd-6662ba99eec0.png)";
+        document.body.appendChild(oDiv);
+        num++;
+        if (num >= 400) {
+            num = 0;
+        }
+        move(oDiv, {
+            width: 0,
+            height: 0,
+            top: y - 100
+        },
+        1000,
+        function() {
+            this.parentNode.removeChild(this);
+        });
+    }
+    this.onmouseup = function() {
+        this.onmousemove = null;
+        this.onmouseup = null;
+    }
+}
+
+function move(obj, mJson, time, fn) {
+    var startTime = new Date();
+    var startVal = {};
+    for (var key in mJson) {
+        startVal[key] = getStyle(obj, key);
+    }
+    var timer = setInterval(function() {
+        var nowTime = new Date();
+        var prop = (nowTime - startTime) / time;
+        if (prop >= 1) {
+            prop = 1;
+            clearInterval(timer);
+            fn && fn.call(obj);
+        }
+        for (var key in mJson) {
+            obj.style[key] = startVal[key] + prop * (mJson[key] - startVal[key]) + 'px';
+        }
+    },
+    13)
+}
+
+function getStyle(obj, attr) {
+    if (attr == 'width') {
+        return obj.clientWidth;
+    } else if (attr == 'height') {
+        return obj.clientHeight;
+    } else if (attr == 'left') {
+        return obj.offsetLeft;
+    } else if (attr == 'top') {
+        return obj.offsetTop;
+    } else {
+        return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];
+    }
+}</script>
+</html>

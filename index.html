@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.animate.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/效果综合.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/主体1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/主体2.css"/>
+		<link rel="stylesheet" type="text/css" href="css/主体3.css"/>
+		<link rel="stylesheet" type="text/css" href="css/主体4.css"/>
+		<style type="text/css">
+			#container{
+				overflow: hidden;
+				position:relative;
+			}
+			/*主体部分*/
+			#main>li{
+				overflow: hidden;
+				background:url(img/main_bg01.jpg) no-repeat;
+				background-size:cover ;
+			}
+			/*楼层效果*/
+			#storey{
+				position: fixed;
+				left:10px;
+				color:darkblue;
+				z-index: 99;
+				
+			}
+			#storey>li{
+				height:50px;
+				line-height: 50px;
+				width:60px;
+				text-align: center;
+				border-radius: 10px;
+				
+				font:bold 2.5em georgia;
+				
+			}
+			#storey>li.slt{
+				/*width: 0;
+			    height: 0;
+			    border-top:20px solid red;
+			   /* border-left: 50px solid transparent;*/
+			   /* border-right: 50px solid transparent;*/
+			  /*  border-bottom: 20px solid red;*/
+				background:skyblue;
+	            width: 60px;
+	            height: 50px;
+	            line-height: 30px;
+	            text-align: center;
+	            transform: skewX(-30deg);
+			}
+			
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$('img').lazyload({
+					placeholder:'img/star.png',
+					//event:, 
+					effect:'fadeIn',  
+					//threshold:300,  
+					//container:$('li')
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="main">
+				<li class="main01">
+					<div>
+						<div><a href="#"><img data-original="img/logo.jpg"/></a></div>
+						<ul>
+							<li><a>您好，请登录</a><a class="hide" style="display: none;">退出</a></li>
+							<li><a >首页</a></li>
+							<li><a >游戏</a></li>
+							<li><a >商城</a></li>
+							<li><a >支持</a></li>
+							<li class="shop_car">我的购物车<b>0</b><i>+1</i></li>
+						</ul>
+					</div>
+					<script type="text/javascript">
+						var $coo_login=$('.main01>div>ul>li:first>a:first');
+						var $tuichu=$('.hide');
+						if($.cookie('username')){
+							$coo_login.text('欢迎：'+$.cookie('username'))
+							$tuichu.show()
+						}else{
+							$coo_login.click(function(){
+								location.href='login.html';
+							})
+						}
+						$tuichu.click(function(ev){
+							var e=ev||window.event;
+							e.preventDefault();
+							$.cookie('username',null,{
+								expires:-1,path:'/'
+							})
+							location.reload();
+						});
+						
+					</script>
+					<ul class="lbt">
+						<li><img data-original="img/main01.png" alt="" /></li>
+						<li><img data-original="img/main02.png" alt="" /></li>
+						<li><img data-original="img/main03.png" alt="" /></li>
+						<li><img data-original="img/main04.png" alt="" /></li>
+						<li><img data-original="img/main05.png" alt="" /></li>
+						<li><img data-original="img/main06.png" alt="" /></li>
+						<li><img data-original="img/main07.png" alt="" /></li>
+					</ul> 
+					<ul class="bar"></ul>
+					<img data-original="img/main08.png" class="b"/>
+					<img data-original="img/main09.png" class="f"/>
+				</li>
+				<li class="main02">
+					<div class="main02_box">
+						<div class="main02_nav">
+							<ul>
+								<li><img data-original="img/main41.jpg"/><p><span>新闻时刻</span></p></li>
+								<li><img data-original="img/main42.jpg" alt="" /><p><span>热销商品</span></p></li>
+								<li><img data-original="img/main43.jpg"/><p><span>推荐游戏</span></p></li>
+							</ul>
+						</div>
+						<div class="main02_list">
+							<div class="main02_tab" id="tab_1">
+								<ul>
+									<li>荣耀战魂</li>
+									<li>彩虹六号</li>
+									<li>全境封锁</li>
+									<li>极限巅峰</li>
+									<li>舞力全开2017</li>
+								</ul>
+								<ul>
+									<li>
+										<h2>《荣耀战魂》：首批挂机玩家账号已被封禁</h2>
+										<div>2017-03-16</div>
+										<p>战士们，你们好！上周，我们已表明了对待“挂机牟利”用户的严肃态度，并在本周初发出了第一批警告，而首批账号封禁工作也已经在今天早些时候执行完毕。同时，我们也发出了一批新的警告。</p>
+										<p><img data-original="img/main16.jpg" alt="" /></p>
+										<p>这次，我们对1500名玩家进行了3天临时封禁的处罚，还对我们侦测到的约4000名初次犯规者发出了警告。</p>
+										<p>而使用作弊工具进行“挂机牟利”的行为违背了我们的管理准则，这些玩家的账号可能会由于使用作弊软件而遭到永久封禁。</p>
+										<p>在任何情况下，受到处罚的玩家都会收到一封电子邮件，解释其受到处罚的原因。</p>
+										<p>最后，希望每一位立于战场的战士都能做到：荣耀、尊重和分享。</p>
+									</li>
+									<li>
+										<h2>第二届《彩虹六号：围攻》职业联赛将于三月启动</h2>
+										<div>2017-03-10</div>
+										<p>育碧与全球最大电子竞技企业ESL联合宣布第二届《彩虹六号：围攻》职业联赛将相继在北美洲、欧洲以及巴西地区三地启动，具体日期分别为3月20日（北美洲）、3月23日（欧洲）以及3月25日（巴西）。</p>
+										<p>于蒙特利尔刚刚落下帷幕的首届《彩虹六号：围攻》职业联赛上，最强的参赛队伍互相角逐，赛事不仅受到了超过1500万粉丝的玩家社区的热切关注。在短短3天的赛程中，同时收看赛事的观众数达到了12万并且比赛观看时数也超过了130万小时！这些优秀的数据也再一次印证了《彩虹六号：围攻》在电竞中的优势表现，同时也体现育碧以对玩家社区的支持、积极的反馈以及热忱的态度来持续构建长期运营游戏的理念。</p>
+										<p>为了确保赛事能够向更大规模以及更好的方向发展，第二届《彩虹六号：围攻》职业联赛将仅在PC平台上举办，而主机平台的玩家们则可参加主联盟赛事。</p>
+										<p>品牌总监AlexandreRemy 表示：“通过在PC平台上举行本届赛事，我们希望这能将比赛的参与度和娱乐向带向更高的水准，宣传我们所拥有的积极观念：展现游戏的特色，选手们辛苦的训练以及他们所付出的努力。”</p>
+										<p>第二届《彩虹六号：围攻》职业联赛将包含三个赛季以及将最终决出全球冠军的总决赛。在每个赛季结束后，三大赛区（欧洲、北美洲以及巴西）的冠军队伍将同台竞技争夺10万美元奖金。第一赛季决赛将于5月20日至21日在波兰卡托维兹举行。</p>
+										<p>目前，《彩虹六号：围攻》已登陆Xbox One、PS4以及PC平台。关于《彩虹六号：围攻》的更多信息，请关注育碧官网和育碧中国官方微博。</p>
+										<p>关于《彩虹六号：围攻》的更多信息，请关注育碧官网和育碧中国官方微博。</p>
+									</li>
+									<li>
+										<h2>《全境封锁》周年庆典开启 今年将推免费内容</h2>
+										<div>2017-03-09</div>
+										<p>2016年，《全境封锁》的特工们走上街头着手拯救在瘟疫爆发后陷入瘫痪，邪恶组织横行并企图掌权的纽约。在这一年中，《全境封锁》推出了《地下世界》、《求生》以及《最后一战》三部DLC，还有根据社区反馈进行的多次版本更新，并且在PC平台上推出了公共测试服务器（PTS）。</p>
+										<p><img data-original="img/main161.jpg" alt="" /></p>
+										<p>“这令人兴奋，甚至疯狂，”育碧Massive工作室创意总监Julian Gerighty说道。对我来说，《全境封锁》超出了我的预期，看到玩家们多么热情，我们收到了多么多的反馈，以及我们在游戏发售后所做的努力都令我十分兴奋。”</p>
+										<p>事实上，在这一整年中，Gerighty说他惊讶地发现玩家们是如何被《全境封锁》所吸引，并且每天平均都会玩上几个小时。是Gerighty在《全境封锁》推出的这一年中所收获的最重要的经验教训。“这是全心全意为玩家们付出的精神，就玩家们在游戏所付出的时间而言，我们也不必吝啬于对玩家的付出。”</p>
+										<p></p>
+									</li>
+									<li>
+										<h2>实现你的极限梦！《极限巅峰》免费周末明日开启</h2>
+										<div>2017-03-09</div>
+										<p>育碧宣布荣获第20届D.I.C.E.年度体育游戏的冬季运动游戏《极限巅峰》将于3月10日开启首个免费周末试玩活动，该活动将登陆Xbox One、PS4以及PC平台。不论是在德纳里峰和马特峰的崇山险峻中施展不可思议的滑雪技巧，悠闲地滑翔于布朗峰的雪原，还是在阿拉斯加的冰川之间来一场紧张刺激的翼装飞行，你的疯狂梦想都将在本周末免费实现！</p>
+										<p><img data-original="img/main17.jpg" alt="" /></p>
+										<p>在全新的免费更新中，阿拉斯加狂野而险峻的迪纳利山脉将会为《极限巅峰》玩家提供21项全新挑战，2项品牌挑战，以及1个大山的故事，供《极限巅峰》玩家征服全新的领域，包括山脊线，极限波峰，巨型冰川，新的城市，以及绵延数公里、未经探索的大自然。在两项额外的邀请赛中挑战自我，突破自己的极限并在计分板上夺得一席之地以提高自己的声望。玩家们可以穿上阿拉斯加的新物品与服装继续自定义路线及游戏回放视频。</p>
+									</li>
+									<li>
+										<h2>《舞力全开2017》正式登陆任天堂最新主机Switch</h2>
+										<div>2017-03-03</div>
+										<p>育碧宣布《舞力全开2017》将于今天，任天堂最新主机Switch正式发售之日同步登陆该平台，同时这也是育碧首款登陆该平台的游戏。</p>
+										<p><img data-original="img/main18.jpg" alt="" /></p>
+										<p>由Calvin Harris与Disciples共同合作的榜单热曲“How Deep Is YourLove”也将作为Switch平台的独占曲目，玩家可通过“无限舞力全开”（JustDance Unlimited）服务获得。不仅有独占曲目，游戏中还收录了贾斯汀·比伯的《Sorry》、Major Lazer Ft. MØ & DJ Snaked 的《LeanOn》、魔力红（Maroon 5）新专辑同名歌曲《Don’t WannaKnow》、派对必选曲目碧昂丝·吉赛尔·诺斯的《SingleLadies (Put a Ring on It)》，还有经典老歌如，皇后乐队的《Don’t Stop Me Now》等40首风格迥异的歌曲。</p>
+									</li>
+								</ul>
+							</div>
+							<div class="main02_tab" id="tab_2">
+								<div>
+									商品列表
+									<a href="#">更多</a>
+								</div>
+								<ul>
+									<li><a href="#"><img data-original="img/main10.jpg" title="末日之战" alt="" /></a>
+										<p>末日之战[数字版]</p>
+										<p><del>市场价：69.00元</del></p>
+										<span>现价：19.90元</span>
+										<p class="shop">加入购物车</p>
+									</li>
+									<li><a href="#"><img data-original="img/main11.jpg" title="特技摩托大合集" alt="" /></a>
+										<p>特技摩托大合集[数字版]</p>
+										<p><del>市场价：299.00元</del></p>
+										<span>现价：109.00元</span>
+										<p class="shop">加入购物车</p>
+									</li>
+									<li><a href="#"><img data-original="img/main12.jpg" title="波斯王子：武者之心" alt="" /></a>
+										<p>波斯王子：武者之心[数字版]</p>
+										<p><del>市场价：299.00元</del></p>
+										<span>现价：109.00元</span>
+										<p class="shop">加入购物车</p>
+									</li>
+									<li><a href="#"><img data-original="img/main13.jpg" title="特技摩托大合集" alt="" /></a>
+										<p>特技摩托大合集[数字版]</p>
+										<p><del>市场价：50.00元</del></p>
+										<span>现价：10.00元</span>
+										<p class="shop">加入购物车</p>
+									</li>
+									<li><a href="#"><img data-original="img/main14.jpg" title="撕裂的天堂" alt="" /></a>
+										<p>撕裂的天堂[数字版]</p>
+										<p><del>市场价：69.00元</del></p>
+										<span>现价：19.00元</span>
+										<p class="shop">加入购物车</p>
+									</li>
+									<li><a href="#"><img data-original="img/main15.jpg" title="幽灵行动:沙漠之鹰" alt="" /></a>
+										<p>幽灵行动:沙漠之鹰[数字版]</p>
+										<p><del>市场价：50.00元</del></p>
+										<span>现价：10.00元</span>
+										<p class="shop">加入购物车</p>
+									</li>
+								</ul>
+							</div>
+							<ul class="main02_tab" id ="tab_3">
+								<li><img data-original="img/main19.jpg" alt="" />
+								<div>猎鹰翱翔</div></li>
+								<li><img data-original="img/main21.png" alt="" />
+								<div>全境封锁</div></li>
+								<li><img data-original="img/main22.jpg" alt="" />
+								<div>极限巅峰</div></li>
+								<li><img data-original="img/main23.jpg" alt="" />
+								<div>看门狗</div></li>
+								<li><img data-original="img/main20.jpg" alt="" />
+								<div>波斯王子</div></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="main03">
+					<h2>游戏人物介绍</h2>
+					<ul>
+						<li>
+							<ul>
+								<li><img data-original="img/main30.jpg" alt="" /><div class="person"><p>制毒头目</p><hr ><span>EL YAYO</span></div></li>
+								<li><img data-original="img/main31.jpg" alt="" /><div class="person"><p>运毒皇后</p><hr ><span>LA REINA</span></div></li>
+								<li><img data-original="img/main32.jpg" alt="" /><div class="person"><p>组织领袖</p><hr ><span>SU NEO</span></div></li>
+								<li><img data-original="img/main33.jpg" alt="" /><div class="person"><p>心灵导师</p><hr ><span>EL CDNAL</span></div></li>
+								<li><img data-original="img/main34.jpg" alt="" /><div class="person"><p>保安头目</p><hr ><span>EL MERO</span></div></li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li><img data-original="img/main35.jpg" alt="" /><div class="person"><p>疾风剑豪</p><hr ><span>亚索</span></div></li>
+								<li><img data-original="img/main36.jpg" alt="" /><div class="person"><p>放逐之刃</p><hr ><span>瑞文</span></div></li>
+								<li><img data-original="img/main37.jpg" alt="" /><div class="person"><p>德玛西亚</p><hr ><span>盖伦</span></div></li>
+								<li><img data-original="img/main38.jpg" alt="" /><div class="person"><p>九尾妖狐</p><hr ><span>阿狸</span></div></li>
+								<li><img data-original="img/main39.jpg" alt="" /><div class="person"><p>战争女神</p><hr ><span>希维尔</span></div></li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li><img data-original="img/main45.jpg" alt="" /><div class="person"><p>八卦回天</p><hr ><span>凌波燕</span></div></li>
+								<li><img data-original="img/main49.jpg" alt="" /><div class="person"><p>鬼泣大神</p><hr ><span>维吉尔</span></div></li>
+								<li><img data-original="img/main47.jpg" alt="" /><div class="person"><p>魔法斗士</p><hr ><span>齐娜</span></div></li>
+								<li><img data-original="img/main48.jpg" alt="" /><div class="person"><p>不朽神尊</p><hr ><span>阿泰</span></div></li>
+								<li><img data-original="img/main46.jpg" alt="" /><div class="person"><p>无名剑士</p><hr ><span>风铃儿</span></div></li>
+							</ul>
+						</li>
+					</ul>
+					<img data-original="img/main08.png" class="b"/>
+					<img data-original="img/main09.png" class="f"/>
+				</li>
+				<li class="main04">
+					<div class="yqlj">
+						<h1 class="ribbon">
+				 			 <span class="ribbon-content">友情链接</span>
+						</h1>
+						<div class="lj_box">
+							<ul>
+								<li>独家赞助：张金珠小珠子</li>
+								<li>友情链接：任骚莹小伙伴</li>
+							</ul>
+							<p>
+								<a href="../PARIS/index.html"><img data-original="img/logo.png"></a>
+								<a href="../京东/index.html"><img data-original="img/jd.png"></a>
+							</p>
+						</div>
+					</div>
+					<div class="foot">
+						<hr />
+						<ul>
+							<li>
+								<span>育碧中国微信公众号</span>
+								<p><img data-original="img/二维码1.jpg"/></p>
+								<span class="tb wx"></span>
+							</li>
+							<li>
+								<span>育碧中国新浪微博</span>
+								<span class="tb wb"></span>
+							</li>
+							<li>
+								<span>育碧手游微信公众号</span>
+								<p><img data-original="img/二维码.jpg"/></p>
+								<span class="tb wx"></span>
+							</li>
+							<li>
+								<span>育碧手游新浪微博</span>
+								<span class="tb wb"></span>
+							</li>
+						</ul>
+						<div>
+							<hr />
+							<p><a href="">关于我们 </a> /<a href="">联系我们</a>  /<a href="">加入我们</a></p>
+							<p>©2006-2013 Ubisoft Entertainment. All Rights Reserved. Ubisoft, ubi.com, and the Ubisoft logo are trademarks of Ubisoft Entertainment in the U.S. and/or other countries.</p>
+							<p>上海碧汉网络科技有限公司 | 网络文化经营许可证沪网文: 【2013】0366-042号 沪ICP备10013909号-11 | 增值电信业务经营许可证: B2-20100035</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<ul id="storey"></ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		/*控制页面总体布局*/
+		var win={
+			w:$(window).width(),
+			h:$(window).height()
+		}
+		/*页面主要结构*/
+		var $box=$('#container'),$main=$('#main'),$storey=$('#storey');
+		
+		var $main_li=$main.children('li');
+		$box.width(win.w);$box.height(win.h);
+		$main.css({
+			width:win.w
+		})
+		$main_li.css({
+			width:win.w,
+			height:win.h
+		})
+		$('.main01>div').width($main_li.width())
+		$main_li.each(function(i,e){
+			$('<li style="font-size:'+(16+10*i)+'px">'+(i+1)+'</li>').appendTo($storey);
+		})
+		
+		$storey.css('top',(win.h-$storey.height())/2+180);
+		var $storey_li=$storey.children('li');
+		var iNow=0;
+		function change(){
+			$storey_li.eq(iNow).addClass('slt').siblings().removeClass('slt');
+			$main.stop(true).animate({'margin-top':-win.h*iNow},200);
+		}
+		$storey_li.click(function(){
+			iNow=$(this).index();
+			change();
+		})
+		$(document).on('mousewheel DOMmouseScroll keyup',function(e){					
+			var d=e.originalEvent.wheelDelta||-e.originalEvent.detail;
+			if( d<0||e.keyCode==40){
+				iNow++;
+				if(iNow==$storey_li.size()) iNow=$storey_li.size()-1;
+			}else if( d>0||e.keyCode==38){
+				iNow--;
+				if(iNow==-1)iNow=0;
+			}
+			change()
+		})
+		$storey_li.eq(0).trigger('click');
+		
+		/*楼层效果*/
+		/*
+		var $body=$('body,html')
+		var arr=[];
+		$main_li.each(function(i,e){
+			arr.push($(e).offset().top)
+		})
+		console.log(arr)
+		$storey_li.click(function(){
+			var iNow=$(this).index();
+			$body.animate({
+				scrollTop:arr[iNow]
+			},200,'elasticOut')
+		})*/
+	</script>
+	<script type="text/javascript">
+		/*轮播图*/
+		$.lbt('.main01',2000);
+		
+		/*主体2***选项卡嵌套*/
+		$.tab('.main02_box')
+		 
+		/*主体2***购物车飞入*/
+		$.cart()
+		
+		/*主体3循环切换*/
+		$.xhqh();
+		
+		/*主体4 hover效果*/
+		var $main04=$('.main04');
+		var $main04_li=$('.main04>div>ul>li');
+		var $main04_p=$('.main04>div>ul>li>p');
+		$main04_li.eq(0).hover(function(){
+			$main04_p.eq(0).slideDown();
+		},function(){
+			$main04_p.eq(0).slideUp();
+		})
+		$main04_li.eq(2).hover(function(){
+			$main04_p.eq(1).slideDown('hidden');
+		},function(){
+			$main04_p.eq(1).slideUp();
+		})
+		
+		/*友情链接*/
+		$.wfgn()
+	</script>
+	
+</html>

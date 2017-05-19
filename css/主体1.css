@@ -1,0 +1,152 @@
+/***********主体第一部分*********************/
+.main01{
+	position: relative;
+	overflow: hidden;
+}
+/*header*/
+.main01>div{
+	height:50px;
+	position:fixed;
+	z-index: 99;
+	top:0;left:0;
+	background:#151515;
+	overflow: hidden;
+	color:#9D9D9D;
+}
+.main01>div img{
+	height:50px;
+}
+.main01>div>div{
+	display: inline-block;
+}
+.main01>div>ul{
+	display: inline-block;
+	overflow:hidden;
+	vertical-align: top;
+	margin-left:5%;
+	height:100%;
+	line-height: 50px;
+	width:70%;
+}
+.main01>div li{
+	float:left;
+	width:100px;
+	height:100%;
+	text-align: center;
+}
+
+.main01>div li>a:hover{
+	color:white;
+}
+.main01>div li>a{
+	color:#9D9D9D;
+	font-size:14px;
+	height:100%;
+	margin-left:10px
+}
+.main01>div li:first-child{
+	width:200px;
+}
+.main01>div li:nth-child(2){
+	background:#3E61AD;
+	margin-left:10px;
+}
+.main01>div li:nth-child(2)>a{
+	color:white;
+}
+.main01>div li:last-child{
+	margin-left:80px;
+	position: relative;
+	color:#E1FFE1;
+	background:#454545;
+	width:170px;
+	text-indent:30px;
+	padding-right:50px;
+}
+.main01>div li:last-child:before{
+	width:16px;height:16px;
+	display:inline-block;
+	content:"";
+	background:url(../img/xb01.png) no-repeat -3px -56px;
+	position: relative;
+	
+}
+.main01 .shop_car>i{
+	width:23px;height:23px;
+	display:inline-block;
+	background:gold;
+	color:black;
+	position: absolute;
+	border-radius: 50%;
+	top:-4px;
+	left:20px;
+	margin-top:20px;
+	line-height: 23px;
+	text-indent:0px;
+	display: none;
+	font-size: 12px;
+}
+.main01>div li:last-child>b{
+	position:absolute;
+	top:-4px;
+	left:150px;
+	background:#CFCBD4;
+	color:#3E61AD;
+	border-radius: 50%;
+	height:35%;
+	width:20%;
+	margin-top:20px;
+	line-height: 15px;
+	text-indent:0px;
+}
+
+
+
+/*轮播图*/
+.main01>.lbt{
+	overflow: hidden;
+	margin-top:50px;
+	height:612px;
+}
+.main01>.lbt>li{
+	float:left;
+	height:100%;
+	width:1349px;
+	/*margin-left:5%;*/
+	
+}
+.main01>.lbt>li>img{
+	margin-left:80px;
+}
+.main01>.b{
+	position:absolute;
+	top:50%;
+	left:0px;
+	height:36px;
+	width:30px;
+}
+.main01>.f{
+	position:absolute;
+	top:50%;
+	right:0px;
+	height:36px;
+	width:30px;
+}
+#main .bar{
+	position:absolute;
+	bottom:20px;
+	left:45%;
+	height:20px;
+	line-height: 20px;
+}
+.main01:first-child>.bar>li{
+	width:12px;
+	height:12px;
+	float:left;
+	margin-left:8px;
+	background:#999999;
+	border-radius: 50%;
+}
+.main01:first-child>.bar>li.slt{
+	background: #3E61AD;
+}

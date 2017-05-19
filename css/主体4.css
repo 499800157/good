@@ -1,0 +1,192 @@
+﻿.main04{
+	position: relative;
+	background-image:none;
+}
+.main04>.foot{
+	height:350px;
+	width:100%;
+	position: absolute;
+	bottom:0px;
+	left: 0;
+	background-color:#000000;
+	color:#999999;
+}
+.main04>.foot>ul{
+	width:90%;
+	margin:0 auto;
+	text-indent: 20px;
+	font-size: 14px;
+}
+.main04>.foot>ul>li{
+	width:280px;
+	float:left;
+	height:50px;
+	line-height: 50px;
+	font-weight: 400;
+	color:white;
+	background-color:#454545;
+	margin-left:20px;
+	margin-top:10px;
+	position: relative;
+}
+.foot>hr{
+}
+.main04 hr{
+	width:95%;
+	margin-top: 100px;
+	margin-left:2.5%;
+	margin-bottom:20px;
+	color:#404040;
+	height:0px;
+	border:1px solid;
+}
+.main04>.foot>div{
+	width:100%;
+	font-size: 14px;
+	line-height: 30px;
+	position: absolute;
+	bottom:30px;
+	left:0;
+	text-align: center;
+}
+.main04>div>div>hr{
+	margin-top:0px;
+}
+.main04 .tb{
+	float:right;
+	display:inline-block;
+	width:34px;
+	height:34px;
+	margin-right:10px;
+	margin-top:10px;
+}
+.main04 .wx{
+	background:url(../img/微信.png) no-repeat;
+}
+.main04 .wb{
+	background:url(../img/微博.png) no-repeat;
+}
+.main04 li p{
+	position: absolute;
+	bottom: 50px;
+	left:0px;
+	width:240px;
+	height:270px;
+	border:20px solid #666666;
+	text-indent:0px;
+	display: none;
+}
+.main04 li p>img{
+	width:100%;
+	height:100%;
+}
+.main04 li .hidden{
+	display: block;
+}
+.main04 a{
+	color:#999999;
+}
+.main04 a:hover{
+	text-decoration: underline;
+	color:white;
+}
+
+/*友情链接*/
+.ribbon {
+
+ font-size: 20px !important;
+ font-family: 'microsoft yahei',Arial,sans-serif;
+ font-weight: normal;
+ max-width: 50%;
+ z-index:100;
+ position: relative;
+ background: orange;
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em; 
+ margin:60px auto ; 
+ letter-spacing: 15px;
+}
+
+/* 彩带左右伪选择器生成的领结花 */
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid orange;
+ z-index: -100;
+}
+
+/* 定位领结花 */
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+
+/* 生成领结阴影 */
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #999 transparent transparent transparent;
+ bottom: -1em;
+}
+
+/* 定位阴影位置 */
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+/*链接*/
+.yqlj{
+	background:linear-gradient(to bottom,transparent,#957F7F,black);
+	height:40%;
+	position: relative;
+}
+
+.lj_box{
+	height:50px;width:50%;margin:30px auto;
+	overflow: hidden;border:1px solid;
+	border-radius:14px;
+	font-size: 18px;
+	box-shadow: -5px 5px rgba(0, 0, 0, .6),
+	-10px 10px rgba(0, 0, 0, .6);
+}
+.lj_box li{
+	height:50px;text-align: center;
+	line-height: 50px;
+}
+
+.lj_box>p>a{
+	position: absolute;
+	display: none;
+}
+.lj_box>p a:first-child{
+	left:30px;
+	top:60px;
+	width:250px;
+	height:150px;
+}
+.lj_box>p a:last-child{
+	right:30px;
+	top:30px;
+	width:300px;
+	height:200px;
+}
+.lj_box>p>a>img{
+width:100%;
+height:100%;
